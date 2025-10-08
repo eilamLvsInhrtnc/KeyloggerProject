@@ -71,7 +71,7 @@ main:
     jb .key_loop
     
 
-    call GetTickCount64 ; Check if 3 seconds passed since last key
+    call GetTickCount64 ; Check if 5 seconds passed since last key
     sub rax, rbx        ; Current time - last press time
     cmp rax, 5000       ; 5000 ms = 5 seconds
     jb .continue
@@ -97,4 +97,5 @@ main:
     pop rsi
     pop rbx
     xor eax, eax
+
     call exit
